@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*
         coordinator.coordinate(
             flow: self.appFlow,
-            withStepper: SetupViewModel()
+            withStepper: self.viewModel
         )
         */
         // WORKS: Ensure using a OneStepper works
