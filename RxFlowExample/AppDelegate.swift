@@ -43,17 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // DOESN'T WORK: Using the AppViewModel as a stepper produces
         // strange side effects:
         // - Emission of two steps, when only one step should be triggered
-        /*
         coordinator.coordinate(
             flow: self.appFlow,
             withStepper: self.viewModel
         )
-        */
         // WORKS: Ensure using a OneStepper works
+        /*
         coordinator.coordinate(
             flow: self.appFlow,
             withStepper: OneStepper(withSingleStep: AppStep.intro)
         )
+        */
         return true
     }
 
