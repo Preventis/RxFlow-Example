@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ChildA-->
+        <scene sceneID="FKU-YQ-5go">
+            <objects>
+                <viewController storyboardIdentifier="SetupStep1" title="ChildA" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZa-MO-TkM" customClass="SetupStep1ViewController" customModule="RxFlowExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fcJ-Z9-I0G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setup" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mz-Vn-2eo">
+                                <rect key="frame" x="30" y="50" width="315" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.75463169640000005" blue="0.61454967849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6H-Ba-N3S" customClass="ExampleButton" customModule="RxFlowExample" customModuleProvider="target">
+                                <rect key="frame" x="30" y="577" width="315" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.75463169642857142" blue="0.61454967851703679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="m6p-Kh-gof"/>
+                                </constraints>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="YZa-MO-TkM" eventType="touchUpInside" id="ptT-GD-WJ7"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Step 1: Make sure you have a first name and a last name" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LHa-OR-qSy">
+                                <rect key="frame" x="30" y="116" width="315" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3cy-Sv-NDa"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.75463169640000005" blue="0.61454967849999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4mz-Vn-2eo" firstAttribute="top" secondItem="tvj-dj-AIJ" secondAttribute="top" constant="30" id="2Ka-Zz-brL"/>
+                            <constraint firstItem="LHa-OR-qSy" firstAttribute="top" secondItem="4mz-Vn-2eo" secondAttribute="bottom" constant="30" id="7iU-kV-5cT"/>
+                            <constraint firstItem="tvj-dj-AIJ" firstAttribute="trailing" secondItem="a6H-Ba-N3S" secondAttribute="trailing" constant="30" id="Dzy-p9-cVR"/>
+                            <constraint firstItem="tvj-dj-AIJ" firstAttribute="trailing" secondItem="4mz-Vn-2eo" secondAttribute="trailing" constant="30" id="MyQ-cs-BLx"/>
+                            <constraint firstItem="tvj-dj-AIJ" firstAttribute="trailing" secondItem="LHa-OR-qSy" secondAttribute="trailing" constant="30" id="RlQ-al-MU3"/>
+                            <constraint firstItem="LHa-OR-qSy" firstAttribute="leading" secondItem="tvj-dj-AIJ" secondAttribute="leading" constant="30" id="hVH-Dw-4R3"/>
+                            <constraint firstItem="4mz-Vn-2eo" firstAttribute="leading" secondItem="tvj-dj-AIJ" secondAttribute="leading" constant="30" id="mKt-Q9-X1y"/>
+                            <constraint firstItem="a6H-Ba-N3S" firstAttribute="leading" secondItem="tvj-dj-AIJ" secondAttribute="leading" constant="30" id="vQw-Fv-bnv"/>
+                            <constraint firstItem="tvj-dj-AIJ" firstAttribute="bottom" secondItem="a6H-Ba-N3S" secondAttribute="bottom" constant="30" id="w0F-dl-sH6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tvj-dj-AIJ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="drv-5c-XrQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="55.322338830584712"/>
+        </scene>
+    </scenes>
+</document>

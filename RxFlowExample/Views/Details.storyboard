@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="una-3g-Jax">
+            <objects>
+                <viewController storyboardIdentifier="Details" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Xi-rz-lFd" customClass="DetailViewController" customModule="RxFlowExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wrN-Xy-L24">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lN-FN-Vng" customClass="ExampleButton" customModule="RxFlowExample" customModuleProvider="target">
+                                <rect key="frame" x="30" y="577" width="315" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.14359413639999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="JrI-zc-MZG"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="mainButtonClicked:" destination="7Xi-rz-lFd" eventType="touchUpInside" id="z5M-3q-Q4i"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhb-jA-fTQ">
+                                <rect key="frame" x="0.0" y="40" width="375" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="pVZ-vX-jOw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.15000000000000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Ok, we first need to Setup some stuff for you, so that the App will know you." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XSm-La-6nC">
+                                <rect key="frame" x="30" y="192" width="315" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="MZh-Nf-na0"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="0.14359413639999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Peq-f4-kai" customClass="ExampleButton" customModule="RxFlowExample" customModuleProvider="target">
+                                <rect key="frame" x="30" y="487" width="315" height="60"/>
+                                <color key="backgroundColor" red="0.11011595122668207" green="0.68208705357142863" blue="0.4882541754451683" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Suh-0K-zr8"/>
+                                </constraints>
+                                <state key="normal" title="Child Flow">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="childFlowButtonClicked:" destination="7Xi-rz-lFd" eventType="touchUpInside" id="3M0-ZB-J3a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="B1O-Hi-6Im" firstAttribute="trailing" secondItem="0lN-FN-Vng" secondAttribute="trailing" constant="30" id="9bN-ps-Ss3"/>
+                            <constraint firstItem="Peq-f4-kai" firstAttribute="leading" secondItem="0lN-FN-Vng" secondAttribute="leading" id="Ixm-nP-iDP"/>
+                            <constraint firstItem="hhb-jA-fTQ" firstAttribute="leading" secondItem="wrN-Xy-L24" secondAttribute="leading" id="LWM-iH-OWt"/>
+                            <constraint firstItem="0lN-FN-Vng" firstAttribute="leading" secondItem="B1O-Hi-6Im" secondAttribute="leading" constant="30" id="Lzb-p2-QPx"/>
+                            <constraint firstItem="B1O-Hi-6Im" firstAttribute="trailing" secondItem="XSm-La-6nC" secondAttribute="trailing" constant="30" id="UvQ-mp-7RY"/>
+                            <constraint firstItem="XSm-La-6nC" firstAttribute="top" secondItem="hhb-jA-fTQ" secondAttribute="bottom" constant="30" id="YV5-Dt-V2m"/>
+                            <constraint firstItem="Peq-f4-kai" firstAttribute="trailing" secondItem="0lN-FN-Vng" secondAttribute="trailing" id="YoA-ki-Is8"/>
+                            <constraint firstItem="0lN-FN-Vng" firstAttribute="top" secondItem="Peq-f4-kai" secondAttribute="bottom" constant="30" id="ach-YH-oPr"/>
+                            <constraint firstItem="hhb-jA-fTQ" firstAttribute="top" secondItem="B1O-Hi-6Im" secondAttribute="top" constant="20" id="fex-qZ-hel"/>
+                            <constraint firstItem="B1O-Hi-6Im" firstAttribute="trailing" secondItem="0lN-FN-Vng" secondAttribute="trailing" constant="30" id="fp4-XJ-KFK"/>
+                            <constraint firstItem="0lN-FN-Vng" firstAttribute="leading" secondItem="B1O-Hi-6Im" secondAttribute="leading" constant="30" id="hIU-vw-dM5"/>
+                            <constraint firstItem="hhb-jA-fTQ" firstAttribute="centerX" secondItem="XSm-La-6nC" secondAttribute="centerX" id="kPF-nJ-L0d"/>
+                            <constraint firstItem="B1O-Hi-6Im" firstAttribute="bottom" secondItem="0lN-FN-Vng" secondAttribute="bottom" constant="30" id="uKk-p6-6uA"/>
+                            <constraint firstItem="XSm-La-6nC" firstAttribute="leading" secondItem="B1O-Hi-6Im" secondAttribute="leading" constant="30" id="ugC-sY-tkU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B1O-Hi-6Im"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="hhb-jA-fTQ" id="llH-7x-0RB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gl9-z2-yg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303.19999999999999" y="266.71664167916043"/>
+        </scene>
+    </scenes>
+</document>

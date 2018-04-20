@@ -6,5 +6,5 @@ target 'RxFlowExample' do
   use_frameworks!
 
   # Pods for RxFlowExample
-  pod 'RxFlow'
+  pod 'RxFlow', :git => 'https://github.com/RxSwiftCommunity/RxFlow.git', :branch => 'develop'
 end

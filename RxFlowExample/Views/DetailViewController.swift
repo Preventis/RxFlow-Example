@@ -1,4 +1,4 @@
-// ViewController.swift
+// DetailViewController.swift
 //
 // - Authors:
 // Guido Schmidt
@@ -6,25 +6,23 @@
 // - Date: 04.04.18
 //
 // Copyright © 2018 Guido Schmidt. All rights reserved.
-    
 
 import UIKit
 
-class IntroViewController: UIViewController {
+class DetailViewController:  UIViewController {
 
     // MARK: - Properties
-    public var viewModel: InitViewModel?
+    var viewModel: AppViewModel?
     @IBOutlet weak var label: UILabel!
 
     // MARK: - Setter
-    public func setViewModel(viewModel: InitViewModel) {
+    public func setViewModel(viewModel: AppViewModel) {
         self.viewModel = viewModel
     }
 
     // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.label.text = self.viewModel!.initMessage
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,11 +30,17 @@ class IntroViewController: UIViewController {
     }
 
     // MARK: - Action handlers
-    @IBAction func toDetailsButtonClicked(_ sender: Any) {
+    @IBAction func childFlowButtonClicked(_ sender: Any) {
         guard let vm = self.viewModel else {
             return
         }
-        vm.toDetails()
+        vm.toSetupFlow()
+    }
+
+    @IBAction func mainButtonClicked(_ sender: Any) {
+        guard let vm = self.viewModel else {
+            return
+        }
+        vm.toIntro()
     }
 }
-

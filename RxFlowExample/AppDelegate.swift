@@ -11,17 +11,24 @@ import RxFlow
 import RxSwift
 import UIKit
 
+extension StoryboardInitializable where Self: UIViewController {
+    public static var bundle: Bundle {
+        return Bundle.main
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    // MARK: - Properties
     let disposeBag = DisposeBag()
     var window: UIWindow?
     var coordinator = Coordinator()
+    var viewModel = AppViewModel()
     lazy var appFlow = {
-        return DemoFlow()
+        return AppFlow(stepper: self.viewModel)
     }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         guard let window = self.window else { return false }
         coordinator.rx.didNavigate.subscribe(
           onNext: { (flow, step) in
@@ -33,9 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               window.rootViewController = root
           }
         )
+        // DOESN'T WORK: Using the AppViewModel as a stepper produces
+        // strange side effects:
+        // - Emission of two steps, when only one step should be triggered
+        /*
         coordinator.coordinate(
             flow: self.appFlow,
-            withStepper: OneStepper(withSingleStep: DemoStep.intro)
+            withStepper: SetupViewModel()
+        )
+        */
+        // WORKS: Ensure using a OneStepper works
+        coordinator.coordinate(
+            flow: self.appFlow,
+            withStepper: OneStepper(withSingleStep: AppStep.intro)
         )
         return true
     }
