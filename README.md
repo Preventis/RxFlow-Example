@@ -1,3 +1,5 @@
+![App Icon](https://raw.githubusercontent.com/Preventis/RxFlow-Example/master/RxFlowExample/Assets.xcassets/AppIcon.appiconset/App%20Store%401x.png)
+
 # [RxFlow](https://github.com/RxSwiftCommunity/RxFlow) Example
 
 Example application to demonstrate the usage of
